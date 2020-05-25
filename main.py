@@ -22,7 +22,7 @@ def extract_indeed_jobs(last_page):
     #for page in range(last_page):
     result = requests.get(f"{URL}&start={0*START}")
     soup = BeautifulSoup(result.text, "html.parser")
-    resluts=soup.find_all("div", {"class":"jobsearch-SerpJobCard"})
+    results=soup.find_all("div", {"class":"jobsearch-SerpJobCard"})
     for result in results:
         job=extract_indeed_jobs(result).jobs.append(job)
     return jobs
